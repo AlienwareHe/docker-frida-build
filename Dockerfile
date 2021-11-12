@@ -9,13 +9,16 @@ RUN apt-get update\
 
 RUN gem install fpm -v 1.11.0 --no-document && python3 -m pip install lief
 
+ENV NVM_DIR $HOME/.nvm
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash\
+    && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" \
     && nvm install 10
+
 
 RUN wget https://dl.google.com/android/repository/android-ndk-r22b-linux-x86_64.zip\
     && unzip android-ndk-r22b-linux-x86_64.zip
 
-ENV ANDROID_NDK_ROOT "/android-ndk-r22b-linux"
+ENV ANDROID_NDK_ROOT "/android-ndk-r22b"
 
 ARG FRIDA_ENV_DIR=/root/frida-env
 WORKDIR ${FRIDA_ENV_DIR}
