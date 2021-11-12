@@ -1,0 +1,25 @@
+From 162452cb2209a7e283735717300fb6c7e8b1489c Mon Sep 17 00:00:00 2001
+From: Your Name <you@example.com>
+Date: Fri, 21 May 2021 09:39:41 +0800
+Subject: [PATCH] fix_linux_armhf_build
+
+---
+ tools/modulate.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/tools/modulate.py b/tools/modulate.py
+index bec372a0..0cd086dc 100755
+--- a/tools/modulate.py
++++ b/tools/modulate.py
+@@ -138,7 +138,7 @@ class ModuleEditor(object):
+ 
+         elements = []
+         is_macho = layout.file_format == 'mach-o'
+-        is_arm = layout.arch_name == 'arm'
++        is_arm = layout.arch_name == 'arm' or layout.arch_name == 'armv7'
+         is_apple_arm64 = is_macho and layout.arch_name in ('arm64', 'arm64e')
+         symbols = layout.symbols
+         for value in values:
+-- 
+2.31.1
+
