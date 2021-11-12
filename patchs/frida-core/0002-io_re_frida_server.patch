@@ -20,8 +20,6 @@ index 0b996e96..8dd710e3 100644
  	private static bool output_version = false;
  	private static string? listen_address = null;
  	private static string? directory = null;
-@@ -38,6 +38,7 @@ namespace Frida.Server {
- 	};
  
  	private static int main (string[] args) {
 +		DEFAULT_DIRECTORY = GLib.Uuid.string_random();

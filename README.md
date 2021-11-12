@@ -8,3 +8,7 @@
 > docker run -it alienhe/docker-frida /bin/bash
 3. 进入docker容器后，执行sh下的patch_frida.sh应用补丁
 4. 编译frida
+
+
+# 当前分支对应Frida版本
+14.2.3
