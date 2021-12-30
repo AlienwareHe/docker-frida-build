@@ -6,7 +6,7 @@
 - 14.2.3
 
 # 使用方式
-0. 选择版本分支，分支号对应frida版本
+0. **选择版本分支，分支号对应frida版本**
 1. 构建docker-frida镜像
 > docker build . -t alienhe/docker-frida
 2. 创建docker-frida容器
@@ -16,4 +16,3 @@
 
 
 # 当前分支对应Frida版本
-14.2.3
